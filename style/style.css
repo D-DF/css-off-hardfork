@@ -15,6 +15,9 @@ body {
   font-family: Atma, sans-serif;
   margin: 0;
   font-size: 1.5rem;
+  background-image: url("../img/blue-splash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 h1,
@@ -29,6 +32,158 @@ button {
   font-family: Bangers, sans-serif;
   letter-spacing: 2px;
 }
+
+/* HEADER */
+
+nav {
+  opacity: 0.8;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: var(--green);
+  margin: 0;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+ul > li:hover {
+  transform: rotate(-10deg)
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+width: 100%;
+height: 100vh;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: var(--orange);
+line-height: 0px;
+}
+
+h1 {
+  font-size: 140px;
+}
+
+header > p {
+  font-size: 100px;
+}
+
+/* section */
+
+h2 {
+  text-align: center;
+}
+
+/* SECTION OCSTACLES */
+
+#obstacles {
+  background-color: var(--orange);
+  padding: 30px;
+}
+
+.obstacles-group, .prizes-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.obstacles article {
+  background-color: var(--green);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.obstacles article:hover {
+  background-color: var(--yellow);
+}
+
+.obstacles article a:hover {
+  color: var(--orange);
+}
+
+/*  SECTION PRIZES */
+
+#prizes {
+  background-color: var(--green);
+  padding: 30px;
+}
+
+.prizes article {
+  border: 3px dashed var(--yellow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#apply {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#apply {
+  padding: 50px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  background-color: var(--orange);
+  width: 500px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+button {
+  background-color: var(--yellow);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--green);
+  color: white;
+}
+
+
+
+footer {
+  text-align: center;
+  background-color: var(--yellow);
+  color: black;
+  padding: 20px;
+}
+
 
 /* ... Your turn! ... */
 
