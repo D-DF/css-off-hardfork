@@ -15,9 +15,6 @@ body {
   font-family: Atma, sans-serif;
   margin: 0;
   font-size: 1.5rem;
-  background-image: url("../img/blue-splash.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 h1,
@@ -33,94 +30,99 @@ button {
   letter-spacing: 2px;
 }
 
-/* HEADER */
-
 nav {
+  background-color: var(--green);
+  padding: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   opacity: 0.8;
 }
 
 nav ul {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  background-color: var(--green);
-  margin: 0;
-  padding: 20px;
-  text-transform: uppercase;
 }
 
-ul > li:hover {
-  transform: rotate(-10deg)
+nav li {
+  list-style: none;
 }
 
-a {
+li a {
   text-decoration: none;
   color: white;
 }
 
-ul {
-  list-style: none;
+nav li:nth-child(odd):hover {
+  transform: rotate(10deg);
+}
+
+nav li:nth-child(even):hover {
+  transform: rotate(-10deg);
 }
 
 header {
-width: 100%;
-height: 100vh;
-background-repeat: no-repeat;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-color: var(--orange);
-line-height: 0px;
+  min-height: 100vh;
+  background-image: url("../img/blue-splash.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  font-size: 140px;
+h1, header > p {
+  color: var(--orange);
+  text-shadow: 1px 1px white;
 }
 
-header > p {
-  font-size: 100px;
+#obstacles {
+  background-color: var(--orange);
 }
 
-/* section */
+.obstacles-group, .prizes-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 
 h2 {
   text-align: center;
 }
 
-/* SECTION OCSTACLES */
-
-#obstacles {
-  background-color: var(--orange);
-  padding: 30px;
-}
-
-.obstacles-group, .prizes-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  border-radius: 10px;
+.wrap {
+  padding: 50px;
 }
 
 .obstacles article {
   background-color: var(--green);
+  border-radius: 10px;
+  padding: 0 40px;
   text-align: center;
-  border-radius: 20px;
+}
+
+.obstacles img {
+  max-width: 100%;
+  height: auto;
+}
+
+.obstacles article a {
+  text-decoration: none;
+  color: white;
 }
 
 .obstacles article:hover {
   background-color: var(--yellow);
-}
-
-.obstacles article a:hover {
   color: var(--orange);
 }
 
-/*  SECTION PRIZES */
-
-#prizes {
+.prizes {
   background-color: var(--green);
-  padding: 30px;
 }
 
 .prizes article {
@@ -129,9 +131,23 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 10Px;
 }
 
+.prizes article a {
+  text-decoration: none;
+  color: white;
+}
+
+#keyboard > img:hover, #spacecamp > img:hover, #heatzone > img:hover {
+  transform: rotate(540deg);
+  transition: transform .9s;
+}
+
+#keyboard > img, #spacecamp > img, #heatzone > img {
+  max-width: 100%;
+  height: auto;
+}
 
 #apply {
   display: flex;
@@ -140,22 +156,23 @@ h2 {
   align-items: center;
 }
 
-#apply {
-  padding: 50px;
+.apply > img {
+  max-width: 100%;
+  height: auto;
 }
 
 label {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 input {
-  background-color: var(--orange);
-  width: 500px;
-  height: 40px;
-  border-radius: 10px;
+  display: block;
   border: none;
+  border-radius: 5px;
+  background-color: var(--orange);
+  height: 30px;
 }
 
 input::placeholder {
@@ -163,29 +180,27 @@ input::placeholder {
 }
 
 button {
-  background-color: var(--yellow);
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
   border: none;
+  background-color: var(--yellow);
+  padding: 5px;
 }
 
 button:hover {
   background-color: var(--green);
-  color: white;
 }
-
-
 
 footer {
-  text-align: center;
   background-color: var(--yellow);
   color: black;
-  padding: 20px;
+  text-align: center;
+  padding: 12px;
 }
-
 
 /* ... Your turn! ... */
 
-@media (min-width: 640px) {
+@media screen and (max-width: 640px) {
+  .obstacles-group, .prizes-group {
+    display: flex;
+    flex-direction: column;
+  }
 }
